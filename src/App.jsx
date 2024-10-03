@@ -1,7 +1,9 @@
 import {CORE_CONCEPTS} from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
+
 function App() {
+
   return (
     <div>
       <Header />
@@ -9,27 +11,11 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept 
-              title={CORE_CONCEPTS[0].title}
-              image={CORE_CONCEPTS[0].image}
-              description={CORE_CONCEPTS[0].description}
-            />
-            <CoreConcept 
-              title={CORE_CONCEPTS[1].title}
-              image={CORE_CONCEPTS[1].image}
-              description={CORE_CONCEPTS[1].description}
-            />
-            <CoreConcept 
-              title={CORE_CONCEPTS[2].title}
-              image={CORE_CONCEPTS[2].image}
-              description={CORE_CONCEPTS[2].description}
-            />
-            <CoreConcept 
-              title={CORE_CONCEPTS[3].title}
-              image={CORE_CONCEPTS[3].image}
-              description={CORE_CONCEPTS[3].description}
-            />
+            {CORE_CONCEPTS.map( (val, index) => <CoreConcept key={index} {...val} /> )}
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
         </section>
       </main>
     </div>
