@@ -1,4 +1,5 @@
 import logoImg from './assets/state-mgmt.png';
+import {CORE_CONCEPTS} from './data';
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -21,12 +22,46 @@ function Header() {
     </header>
   );
 }
+
+function CoreConcept(props) {
+  return (
+    <li>
+      <img src={props.image} alt="{props.title}" />
+      <h1>{props.title}</h1>
+      <p>{props.description}</p>
+    </li>
+  )
+}
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConcept 
+              title={CORE_CONCEPTS[0].title}
+              image={CORE_CONCEPTS[0].image}
+              description={CORE_CONCEPTS[0].description}
+            />
+            <CoreConcept 
+              title={CORE_CONCEPTS[1].title}
+              image={CORE_CONCEPTS[1].image}
+              description={CORE_CONCEPTS[1].description}
+            />
+            <CoreConcept 
+              title={CORE_CONCEPTS[2].title}
+              image={CORE_CONCEPTS[2].image}
+              description={CORE_CONCEPTS[2].description}
+            />
+            <CoreConcept 
+              title={CORE_CONCEPTS[3].title}
+              image={CORE_CONCEPTS[3].image}
+              description={CORE_CONCEPTS[3].description}
+            />
+          </ul>
+        </section>
       </main>
     </div>
   );
